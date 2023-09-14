@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int main(int argc, char *argv[1]){
+int main(int argc, char *argv[]){
+    srand(time(NULL));
     puts("Estoy esperando un numero entre 1 y 1000");
     puts("Te doy 10 intentos para adivinarlo");
     int r = rand() % (1000) + 1;
@@ -14,7 +16,7 @@ int main(int argc, char *argv[1]){
             return 0;
         }
         else if(num > r){
-            puts("Te pasaste")
+            puts("Te pasaste");
         }
         else{
             puts("Falta un poco");
