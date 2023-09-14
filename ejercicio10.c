@@ -4,6 +4,7 @@
 int main(int argc, char *argv[]){
     int contador = 1;
     int lineas;
+    //no me toma bien el comando
     do{
         scanf("%s", &lineas);
         if(lineas === '\n'){

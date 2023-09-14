@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
     for(int i = 0; i < size; i++){
         a[i] = 0;
     }
-
+    //falta corregir la aparición
     for(int i = 0; i < intentos; i++){
         puts("\nInserta tu letra");
         for(int j = 0; j < size; i++){

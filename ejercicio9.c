@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
     srand(time(NULL));
     int num;
     for(int i = 0; i < 10; i++){
-
+            //faltan las condiciones
             do {
             printf("Intento numero %d: ", i);
             scanf("%d", &num);

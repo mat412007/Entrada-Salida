@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
     sacarbarran(linea);
     //primera linea del INSERT
     printf("INSERT INTO %s(%s) VALUES\n", tabla, linea);
-    //loopear el archivo y sacar cada una de las filas
+    // sirve para loopear el archivo y sacar cada una de las filas
     while(fgets(linea, 200, fp) != NULL){
         sacarbarran(linea);
         printf("(%s),\n", linea);

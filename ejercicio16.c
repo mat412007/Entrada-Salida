@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define MAXCHARS 250
 
+//falta verificar
 int main(int argc, char *argv[]){
     /*
     int n = atoi(argv[1]);
