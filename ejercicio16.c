@@ -1,27 +1,27 @@
-#include <stdiol.h>
-#include <stdlib.h>
-#define MAXCHARS 250
+#include <stdio.h>
 
-//falta verificar
-int main(int argc, char *argv[]){
-    /*
-    int n = atoi(argv[1]);
-    n *= -1;
-    */
-    int n = atoi(&argv[1][1]);
+int main (int argc, char* argv[]) {
 
-    char *filename = argv[2];
-    FILE *fp = fopen(filename, "r"); //r de read (leer el archivo)
-    char buffer[MAXCHARS];
-    //strcpy(buffer, "alguna cosa\n");
-    //printf("antes del fgets %s", buffer);
-    for(int i = 0; i < n; i++){
-        fgets(buffer, MAXCHARS, fp);
-        printf("%s", buffer);
+    FILE *archivo = fopen(argv[1], "r");
+
+    if(archivo == NULL){
+        printf("No se encontro el archivo");
+        return 1;
     }
-    //fgets(buffer, MAXCHARS, fp);
-    //printf("despues %s", buffer);
-    //fgets(buffer, MAXCHARS, fp);
-    //printf("2do fgets %s", buffer);
-    return 0;
+
+    char linea[1024];
+    int contador_linea = 0;
+
+    // A este fgets le estoy indicando que (lo que lea lo va a guardar en mi array linea)
+    // (como maximo va a leer 1024 caracteres de esa linea) y ademas (lo va a leer desde
+    // mi archivo). Mientras que lo que agarra fgets sea distinto de nulo se repite el while
+    // y ademas compruebo que la cantidad de lineas leidas (contador_linea) sea menor a 10
+    while(fgets(linea, 1024, archivo) != NULL && contador_linea < 10){
+        printf("%s", linea);
+        contador_linea++;
+    }
+
+    fclose(archivo);
+
+
 }
